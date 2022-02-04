@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+$font-stack: 'Roboto', sans-serif;
+
+$primary-clr: #000;
+$secondary-clr: #4D4D4D;
+$link-clr: #BB8A2C;
+$bg-clr: #F5F5F5;
+
+/* Base */
+html {
+    font-size: 100%;
+}
+
+body {
+  font: normal 400 1rem/1.5 $font-stack;
+  color: $primary-clr;
+  background-color: $bg-clr;
+  margin: 3em;
+}
+
+/* Transitions */
+/*
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .4s ease-out;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+*/
+
+/* Typography */
+h1 {
+    font-size: 2.125rem;
+    font-weight: 400;
+}
+h1.logo {
+    color: $secondary-clr;
+    transition: all .2s ease-in-out;
+}
+h1.logo.unfocus {
+    font-size: 1.0625rem;
+    font-weight: 400;
+}
+h2 {
+    font-size: 3rem;
+    font-weight: 400;
+}
+h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+p.subtitle {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+p.subtitle-2 {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+p.overline {
+    font-size: 0.625rem;
+    line-height: 2;
+    font-weight: 500;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+}
+
+/* Cases list */
+.casesWrapper {
+    width:100%;
+    float: left;
+}
+.caseItem {
+    max-width: calc((100% - 3em) / 3);
+    margin: 0 1.5em 2em 0;
+    float: left;
+}
+
+.caseItem:nth-child(3n+3) {
+    margin-right: 0;
+}
+
+.caseItem img {
+    width: 100%;
+}
+
+/* Case view */
+.caseOverline {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.caseOverline > * {
+    display: inline-block;
+}
+
+.caseOverline p {
+   margin-left: 1.5em;
+   padding-left: 1.5em;
+   border-left: 1px solid #000;
+}
