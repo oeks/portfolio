@@ -198,4 +198,21 @@ h1.logo a {
 .caseItem img:hover {
   opacity: 1;
 }
+
+/* mobile view */
+@media only screen and (max-width: 768px) {
+  h1.logo.unfocus {
+    font-size: 2.125rem;
+    font-weight: 400;
+  }
+  p.overline {
+    font-size: .8rem;
+  }
+  .caseItem {
+    max-width: calc((100% - 1.5em) / 2);
+  }
+  .caseItem:nth-child(even) {
+    margin-right: 0;
+  }
+}
 /*# sourceMappingURL=style.css.map */
