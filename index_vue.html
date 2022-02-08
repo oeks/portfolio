@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Portfolio</title>
+    <meta name="description" content="UX Portfolio" />
+    <meta name="author" content="Oskar Ekström" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/vue-router@4"></script>
+  </head>
+
+  <body>
+    <div id="app">
+
+      <router-link to="/">
+        <h1 class="logo" :class="{ unfocus: caseOpened }">
+          Oskar Ekström<br />UX-designer
+        </h1>
+      </router-link>
+
+      <router-view></router-view>
+
+    </div>
+
+    <!-- Vue Pages -->
+    <script src="views/home.vue.js"></script>
+    <script src="views/case.vue.js"></script>
+
+    <script src="js/main.js"></script>
+
+    <!-- components -->
+    <!-- <script src="components/ListView.js"></script> -->
+
+    <script>
+      // Mount Vue to DOM
+      // const mountedApp = app.mount("#app");
+    </script>
+  </body>
+</html>

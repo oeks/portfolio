@@ -7,50 +7,43 @@
     <meta name="author" content="Oskar Ekström" />
     <meta name="robots" content="noindex, nofollow" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="https://unpkg.com/vue@next"></script>
   </head>
 
+  <!-- 
+    Portfolio MVP
+  -->
+
   <body>
-    <div id="app">
-      <h1 class="logo" :class="{ unfocus: caseOpened }" @click="resetView()">
-        Oskar Ekström<br />UX-designer
+    <header>
+      <h1 class="logo">
+        <a href="index.html">Oskar Ekström<br />UX-designer</a>
       </h1>
+    </header>
 
-      <!-- List cases -->
-      <!-- <transition name="fade"></transition> -->
-        <section v-if="!caseOpened" key="list">
-          <h2>{{ casesHeader }}</h2>
+    <section>
+      <h2>Cases</h2>
 
-          <div class="casesWrapper">
-            <div
-              v-for="caseItem in caseList"
-              :key="caseItem.id"
-              @click="openCase(caseItem.id)"
-              class="caseItem"
-            >
-              <img :src="caseItem.image" :alt="caseItem.title" />
-              <p class="subtitle">{{ caseItem.title }}</p>
-              <p class="subtitle-2">{{ caseItem.role }}</p>
-            </div>
-          </div>
-        </section>
+      <div class="casesWrapper">
+        <div class="caseItem">
+          <a href="case-1.html" class="image">
+            <img src="resources/preview-1.png" alt="" />
+          </a>
+          <a href="case-1.html">
+            <p class="subtitle">Customer service app for Lindex</p>
+            <p class="subtitle-2">UX & UI</p>
+          </a>
+        </div>
 
-        <!-- Specific case -->
-        <section v-else key="item">
-          <div class="caseOverline">
-            <img src="resources/arrow-left.svg" @click="resetView()" />
-            <p class="overline">{{ caseList[activeCase].title }}</p>
-          </div>
-          <h2>Brief</h2>
-        </section>
-      
-    </div>
-
-    <script src="js/main.js"></script>
-
-    <script>
-      // Mount Vue to DOM
-      const mountedApp = app.mount("#app");
-    </script>
+        <div class="caseItem">
+          <a href="case-2.html" class="image">
+            <img src="resources/preview-2.png" alt="" />
+          </a>
+          <a href="case-2.html">
+            <p class="subtitle">Store return app for Lindex</p>
+            <p class="subtitle-2">UX & UI</p>
+          </a>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

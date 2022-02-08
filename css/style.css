@@ -11,16 +11,11 @@ body {
   margin: 3em;
 }
 
-/* Transitions */
-/*
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .4s ease-out;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
-*/
 /* Typography */
+h1, h2, h3, p {
+  margin: 0;
+}
+
 h1 {
   font-size: 2.125rem;
   font-weight: 400;
@@ -28,8 +23,11 @@ h1 {
 
 h1.logo {
   color: #4D4D4D;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  /* transition: all .2s ease-in-out; */
+  display: inline-block;
+  margin-bottom: 1rem;
+  /* cursor: pointer; */
+  display: inline-block;
 }
 
 h1.logo.unfocus {
@@ -40,6 +38,7 @@ h1.logo.unfocus {
 h2 {
   font-size: 3rem;
   font-weight: 400;
+  margin-bottom: .5rem;
 }
 
 h3 {
@@ -65,6 +64,11 @@ p.overline {
   text-transform: uppercase;
 }
 
+p.muted {
+  color: #4D4D4D;
+  margin: 1rem 0 2rem;
+}
+
 /* Cases list */
 .casesWrapper {
   width: 100%;
@@ -74,15 +78,16 @@ p.overline {
 .caseItem {
   max-width: calc((100% - 3em) / 3);
   margin: 0 1.5em 2em 0;
+  /* cursor: pointer; */
   float: left;
-}
-
-.caseItem:nth-child(3n+3) {
-  margin-right: 0;
 }
 
 .caseItem img {
   width: 100%;
+}
+
+.caseItem:nth-child(3n+3) {
+  margin-right: 0;
 }
 
 /* Case view */
@@ -96,15 +101,101 @@ p.overline {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 1em;
 }
 
 .caseOverline > * {
   display: inline-block;
 }
 
+.caseOverline img {
+  cursor: pointer;
+}
+
 .caseOverline p {
   margin-left: 1.5em;
   padding-left: 1.5em;
   border-left: 1px solid #000;
+}
+
+ul.caseImages {
+  list-style-type: none;
+  margin: 0 0 2rem -.5rem;
+  padding: 0;
+}
+
+ul.caseImages li {
+  max-width: calc(100% / 6);
+  margin: 0 .5rem .5rem;
+  cursor: pointer;
+  background: #000;
+  display: inline-block;
+}
+
+ul.caseImages li img {
+  opacity: .8;
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+  display: block;
+  width: 100%;
+}
+
+ul.caseImages li img:hover {
+  opacity: 1;
+}
+
+.textSection {
+  margin-bottom: 1rem;
+}
+
+.textSection h3 {
+  margin-bottom: .5rem;
+}
+
+/* temporary stylings for the static mvp */
+body {
+  max-width: 900px;
+}
+
+h1.logo a {
+  text-decoration: none;
+  color: #4D4D4D;
+}
+
+.caseOverline {
+  margin-top: .5rem;
+}
+
+.caseItem a {
+  text-decoration: none;
+  color: #4D4D4D;
+}
+
+.caseItem a.image {
+  margin-bottom: .5rem;
+  float: left;
+  position: relative;
+}
+
+.caseItem a.image::after {
+  content: " ";
+  background: #000000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  position: absolute;
+}
+
+.caseItem img {
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+  opacity: .8;
+  float: left;
+}
+
+.caseItem img:hover {
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */

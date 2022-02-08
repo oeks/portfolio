@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Portfolio</title>
+    <meta name="description" content="UX Portfolio" />
+    <meta name="author" content="Oskar Ekström" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/vue-router@4"></script>
+  </head>
+
+  <body>
+    <div id="app">
+
+<router-view></router-view>
+
+      <h1 class="logo" :class="{ unfocus: caseOpened }" @click="resetView()">
+        Oskar Ekström<br />UX-designer
+      </h1>
+
+      <!-- Cases list -->
+      <section v-if="!caseOpened" key="list">
+        <h2>Cases</h2>
+
+        <div class="casesWrapper">
+          <div
+            v-for="caseItem in caseList"
+            :key="caseItem.id"
+            class="caseItem"
+            @click="openCase(caseItem.id)"
+          >
+            <img :src="caseItem.images[0].source" :alt="caseItem.title" />
+            <p class="subtitle">{{ caseItem.title }}</p>
+            <p class="subtitle-2">{{ caseItem.role }}</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Specific case -->
+      <section v-else key="item">
+        <div class="caseOverline">
+          <img src="resources/arrow-left.svg" @click="resetView()" />
+          <p class="overline">{{ caseList[activeCase].title }}</p>
+        </div>
+
+        <h2>Brief</h2>
+        <p>{{ caseList[activeCase].brief }}</p>
+        <p class="muted">Role: {{ caseList[activeCase].roleLong }}</p>
+
+        <ul class="caseImages">
+          <li v-for="(image, index) in caseList[activeCase].images" :key="index"><img :src="image.source"></li>
+        </ul>
+
+        <h2>Process</h2>
+        <div v-for="processStep in caseList[activeCase].process" class="textSection">
+          <h3>{{ processStep.title }}</h3>
+          <p>{{ processStep.content }}</p>
+        </div>
+        
+      </section>
+    </div>
+
+    <!-- Vue Pages -->
+    <script src="views/home.vue.js"></script>
+    <script src="views/case.vue.js"></script>
+
+    <script src="js/main.js"></script>
+
+    <!-- components -->
+    <!-- <script src="components/ListView.js"></script> -->
+
+    <script>
+      // Mount Vue to DOM
+      // const mountedApp = app.mount("#app");
+    </script>
+  </body>
+</html>
