@@ -38,6 +38,7 @@ h1.logo {
 h1.logo.unfocus {
   font-size: 1.0625rem;
   font-weight: 400;
+  margin-bottom: 1rem;
 }
 
 h2 {
