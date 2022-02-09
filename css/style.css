@@ -9,6 +9,11 @@ body {
   color: #000;
   background-color: #F5F5F5;
   margin: 3em;
+  float: left;
+}
+
+body > * {
+  float: left;
 }
 
 /* Typography */
@@ -69,6 +74,10 @@ p.muted {
   margin: 1rem 0 2rem;
 }
 
+a, a:visited {
+  color: #8E6619;
+}
+
 /* Cases list */
 .casesWrapper {
   width: 100%;
@@ -76,9 +85,9 @@ p.muted {
 }
 
 .caseItem {
-  max-width: calc((100% - 3em) / 3);
+  max-width: calc((100% - 1.5em) / 2);
+  /* max-width: calc((100% - 3em) / 3); */
   margin: 0 1.5em 2em 0;
-  /* cursor: pointer; */
   float: left;
 }
 
@@ -86,10 +95,15 @@ p.muted {
   width: 100%;
 }
 
-.caseItem:nth-child(3n+3) {
+.caseItem:nth-child(even) {
   margin-right: 0;
 }
 
+/*
+.caseItem:nth-child(3n+3) {
+    margin-right: 0;
+}
+*/
 /* Case view */
 .caseOverline {
   display: -webkit-box;
@@ -108,8 +122,16 @@ p.muted {
   display: inline-block;
 }
 
-.caseOverline img {
+.caseOverline a img {
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
   cursor: pointer;
+  display: block;
+}
+
+.caseOverline a img:hover {
+  padding-right: 6px;
+  margin-left: -6px;
 }
 
 .caseOverline p {
@@ -146,10 +168,16 @@ ul.caseImages li img:hover {
 
 .textSection {
   margin-bottom: 1rem;
+  float: left;
 }
 
 .textSection h3 {
   margin-bottom: .5rem;
+}
+
+.textSection a {
+  margin-top: 1rem;
+  display: block;
 }
 
 /* temporary stylings for the static mvp */
@@ -158,6 +186,7 @@ body {
 }
 
 h1.logo a {
+  display: block;
   text-decoration: none;
   color: #4D4D4D;
 }
@@ -199,19 +228,27 @@ h1.logo a {
   opacity: 1;
 }
 
-/* mobile view */
+/* mobile views */
+@media only screen and (max-width: 600px) {
+  .caseItem {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 2em 0;
+    float: left;
+    display: block;
+  }
+  .caseItem a {
+    width: 100%;
+    display: block;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   body {
     margin: 1.5em;
   }
   h2 {
     font-size: 2.5rem;
-  }
-  .caseItem {
-    max-width: calc((100% - 1.5em) / 2);
-  }
-  .caseItem:nth-child(even) {
-    margin-right: 0;
   }
   ul.caseImages li {
     max-width: calc(100% / 4);

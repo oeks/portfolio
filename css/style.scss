@@ -4,7 +4,7 @@ $font-stack: 'Roboto', sans-serif;
 
 $primary-clr: #000;
 $secondary-clr: #4D4D4D;
-$link-clr: #BB8A2C;
+$link-clr: #8E6619;
 $bg-clr: #F5F5F5;
 
 /* Base */
@@ -17,6 +17,11 @@ body {
   color: $primary-clr;
   background-color: $bg-clr;
   margin: 3em;
+  float: left;
+}
+
+body > * {
+    float: left;
 }
 
 /* Typography */
@@ -67,16 +72,20 @@ p.muted {
     color: $secondary-clr;
     margin:1rem 0 2rem;
 }
+a, a:visited {
+    color: $link-clr;
+}
 
 /* Cases list */
 .casesWrapper {
     width:100%;
     float: left;
 }
+
 .caseItem {
-    max-width: calc((100% - 3em) / 3);
+    max-width: calc((100% - 1.5em) / 2);
+    /* max-width: calc((100% - 3em) / 3); */
     margin: 0 1.5em 2em 0;
-    /* cursor: pointer; */
     float: left;
 
     img {
@@ -84,9 +93,15 @@ p.muted {
     }
 }
 
+.caseItem:nth-child(even) {
+    margin-right: 0;
+}
+
+/*
 .caseItem:nth-child(3n+3) {
     margin-right: 0;
 }
+*/
 
 /* Case view */
 .caseOverline {
@@ -98,8 +113,14 @@ p.muted {
     > * {
         display: inline-block;
     }
-    img {
+    a img {
+        transition: all 0.2s ease-out;
         cursor: pointer;
+        display: block;
+    }
+    a img:hover {
+        padding-right: 6px;
+        margin-left: -6px;
     }
     p {
         margin-left: 1.5em;
@@ -134,8 +155,13 @@ ul.caseImages {
 
 .textSection {
     margin-bottom: 1rem;
+    float: left;
     h3 {
         margin-bottom: .5rem;
+    }
+    a {
+        margin-top: 1rem;
+        display: block;
     }
 }
 
@@ -145,6 +171,7 @@ body {
 }
 
 h1.logo a {
+    display: block;
     text-decoration: none;
     color: $secondary-clr;
 }
@@ -183,19 +210,27 @@ h1.logo a {
     }
 }
 
-/* mobile view */
+/* mobile views */
+@media only screen and (max-width: 600px) {
+    .caseItem {
+        width: 100%;
+        max-width: none;
+        margin: 0 0 2em 0;
+        float: left;
+        display: block;
+
+        a {
+            width: 100%;
+            display: block;
+        }
+    }
+}
 @media only screen and (max-width: 768px) {
     body {
         margin: 1.5em;
     }
     h2 {
         font-size: 2.5rem;
-    }
-    .caseItem {
-        max-width: calc((100% - 1.5em) / 2);
-    }
-    .caseItem:nth-child(even) {
-        margin-right: 0;
     }
     ul.caseImages li {
         max-width: calc(100% / 4);
