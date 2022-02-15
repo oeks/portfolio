@@ -2,10 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Store return app for Lindex</title>
+    <title>Conversion rate optimization for Lindex</title>
     <meta name="robots" content="noindex, nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/glightbox.css" />
   </head>
 
   <!-- 
@@ -13,84 +14,103 @@
   -->
 
   <body>
-    <header>
-      <h1 class="logo unfocus">
-        <a href="index.html">Oskar Ekström<br />UX-designer</a>
-      </h1>
-    </header>
 
-    <section>
-      <div class="caseOverline">
-        <a href="index.html"
-          ><img src="resources/arrow-left.svg" alt="Go back"
-        /></a>
-        <p class="overline">Store return app for Lindex</p>
-      </div>
+    <div class="wrapper">
 
-      <h2>Brief</h2>
-      <p>
-        The retailer Lindex wanted to improve the process for returning orders
-        placed online in their stores by developing a web app that could be run
-        both on a tablet and in their current POS system.
-      </p>
-      <p class="muted">Role: User Experience and User Interface design</p>
+      <header class="unfocus">
+        <h1 class="logo">
+          <a href="index.html">Oskar Ekström<br />UX-designer</a>
+        </h1>
+      </header>
 
-      <ul class="caseImages">
-        <li>
-          <a href="resources/case2_image-1.png" target="_blank"
-            ><img
-              src="resources/case2_preview-1.png"
-              alt="Sketch of the order information view"
-          /></a>
-        </li>
-        <li>
-          <a href="resources/case2_image-2.png" target="_blank"
-            ><img
-              src="resources/case2_preview-2.png"
-              alt="Sketch of the summary view"
-          /></a>
-        </li>
-      </ul>
+      <main>
+        <section>
+          <div class="caseOverline">
+            <a href="index.html"
+              ><img src="resources/arrow-left.svg" alt="Go back"
+            /></a>
+            <p class="overline">Conversion rate optimization for Lindex</p>
+          </div>
 
-      <h2>Process</h2>
+          <h2>Background</h2>
+          <p>
+            The user experience undoubtedly plays a big part in how successfully a
+            website manages to convert visitors into paying and returning customers.
+            At Lindex, I acted as a UX resource in a Conversion Rate Optimization
+            (CRO) constellation where A/B-testing as a method was used to improve
+            the conversion rates in various ways.
+          </p>
+          <p class="muted">
+            Role: User Experience, User Interface Design, and development
+          </p>
 
-      <div class="textSection">
-        <h3>Research</h3>
-        <p>
-          Stakeholder interviews and a literature review of design
-          considerations for POS systems contributed to defining basic
-          requirements and constraints for the design. The existing return
-          process was investigated by visiting stores and interviewing employees
-          about their experiences.
-        </p>
-      </div>
+          <h2>Process</h2>
 
-      <div class="textSection">
-        <h3>Design</h3>
-        <p>
-          Early sketches of potential solutions were created with pen and paper
-          (and in the wireframing tool Balsamiq as displayed above) and
-          discussed together with store employees and developers in an effort to
-          receive quick and honest feedback. The final design was made in Adobe
-          XD and shared with developers.
-        </p>
-      </div>
+          <div class="textSection">
+            <h3>Research and analysis</h3>
+            <p>
+              Heuristic evaluations and user feedback ongoingly sparked a lot of
+              ideas on improvements to the user experience. These ideas could be
+              explored early together with data scientists by diving into droves of
+              behavioral data such as click maps, funnels, and session recordings.
+              We also had tools for surveying visitors through the website or
+              through e-mails to get our hands on attitudinal data. Hypotheses could
+              then be expressed as user stories and prioritized in a separate
+              backlog by the group's collective confidence in them, ease of
+              implementation, and estimated impact.
+            </p>
+          </div>
 
-      <div class="textSection">
-        <h3>Evaluation and follow-up</h3>
-        <p>
-          The app was first released to a small group of "super users" who were
-          encouraged to report all issues and questions in a closed discussion
-          forum. The feedback contributed to minor refinements of the design.
-          The largest change after development was adding more friction to the
-          return process as the perceived ease of processing returns could make
-          users feel a bit anxious.
-        </p>
-      </div>
+          <div class="textSection">
+            <h3>Design</h3>
+            <p>
+              Sketches and prototypes of suggested changes were shared and refined
+              within the group. Minor changes were coded and reviewed directly in
+              the a/b-testing tool (Google Optimize).
+            </p>
+          </div>
 
-      <div class="textSection">
-        <a href="index.html" target="_self">Go back</a>
-      </div>
-    </section>
+          <div class="textSection">
+            <h3>Evaluation</h3>
+            <p>
+              Sales-related KPIs were tracked between test versions as all these
+              changes had the business goal of positively affecting conversion
+              rates. These findings needed to occasionally be supplemented by
+              attitudinal data to ensure that users also perceived these changes to
+              be improving their experiences. It was not in the group's interest to
+              compromise the user experience over short-time winnings. Test results
+              were subsequently shared with the larger team and changes were
+              recommended for development if the hypothesis appeared to hold.
+            </p>
+          </div>
+
+          <div class="textSection">
+            <h3>Learnings</h3>
+            <p>
+              A/B-testing appears to be an easily graspable concept for a wider
+              organization as the method delivers concrete results. As such it could
+              be a valuable tool for instilling a data-driven culture. On the other
+              hand, it became important to contextualize the data by relating it to
+              the overarching product vision and strategy.
+            </p>
+          </div>
+
+          <div class="textSection">
+            <a href="index.html" target="_self">Go back</a>
+          </div>
+        </section>
+      </main>
+
+    </div>
+
+    <script src="js/glightbox.min.js"></script>
+
+    <script>
+     const lightbox = GLightbox({
+       touchNavigation: true,
+       loop: false,
+       descPosition: 'bottom'
+     });
+    </script>
   </body>
 </html>
