@@ -95,6 +95,7 @@ a:visited {
 /* Cases list */
 .casesWrapper {
   width: 100%;
+  margin-bottom: 3em;
   float: left;
 }
 
@@ -185,6 +186,10 @@ ul.caseImages {
     display: block;
   }
 }
+
+.textSection:last-of-type {
+    margin-bottom: 3em;
+  }
 
 .imgSection {
   width: 70%;

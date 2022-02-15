@@ -93,6 +93,7 @@ a:visited {
 /* Cases list */
 .casesWrapper {
   width: 100%;
+  margin-bottom: 3em;
   float: left;
 }
 
@@ -198,6 +199,10 @@ ul.caseImages li:nth-child(5n) {
 .textSection a {
   margin-top: 1rem;
   display: block;
+}
+
+.textSection:last-of-type {
+  margin-bottom: 3em;
 }
 
 .imgSection {
