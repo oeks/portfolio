@@ -307,7 +307,7 @@ h1.logo a {
     display: block;
 }
 
-.caseItem span a:last-of-type {
+.caseItem span p:last-of-type {
     font-style: italic;
 }
 
