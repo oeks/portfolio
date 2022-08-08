@@ -17,7 +17,7 @@ body {
     max-width: 800px; /* 960 */
 }
 
-.wrapper .cases {
+.wrapper.cases {
     max-width: unset;
 }
 
