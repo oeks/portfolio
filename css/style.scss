@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 // @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-$font-stack: "Roboto", sans-serif;
+$font-stack: "Amiri", serif;
+$font-stack-ss: "Roboto", sans-serif;
 
 $primary-clr: #000;
 $secondary-clr: #181514; // 4D4D4D
@@ -22,7 +24,11 @@ body {
 }
 
 .wrapper {
-  max-width: 960px;
+  max-width: 800px;
+}
+
+.wrapper.cases {
+  max-width: unset;
 }
 
 header {
@@ -49,18 +55,21 @@ p {
 h1 {
   font-size: 2.125rem;
   font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.02rem;
 }
 h1.logo {
   color: $secondary-clr;
 }
 header.unfocus {
   h1.logo {
-    font-size: 1.0625rem;
+    font-size: 1.5rem;
+    line-height: 1.4;
     font-weight: 400;
   }
 }
 h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 400;
   margin-bottom: 0.5rem;
 }
@@ -77,11 +86,13 @@ p.subtitle-2 {
   font-weight: 500;
 }
 p.overline {
+  font-family: $font-stack-ss;
   font-size: 0.625rem;
   line-height: 2;
   font-weight: 500;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
+  margin-bottom: 0;
 }
 p.muted {
   color: $muted-clr;
@@ -90,6 +101,9 @@ p.muted {
 a,
 a:visited {
   color: $link-clr;
+}
+#glightbox-body {
+  font-family: $font-stack-ss;
 }
 
 /* Cases list */
@@ -100,9 +114,8 @@ a:visited {
 }
 
 .caseItem {
-  width: calc((100% - 1.5em) / 2);
-  // width: calc((100% - 3em) / 3);
-  margin: 0 1.5em 2em 0;
+  width: calc((100% - 3em) / 3);
+  margin: 0 0 2em 0;
   float: left;
 
   img {
@@ -110,15 +123,9 @@ a:visited {
   }
 }
 
-.caseItem:nth-child(even) {
-  margin-right: 0;
+.caseItem:nth-child(3n+2) {
+  margin: 0 1.5em;
 }
-
-/*
-.caseItem:nth-child(3n+3) {
-    margin-right: 0;
-}
-*/
 
 /* Case view */
 .caseOverline {
@@ -176,14 +183,15 @@ ul.caseImages {
 
 .textSection {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
   float: left;
   h3 {
     margin-bottom: 0.5rem;
   }
   a {
+    font-size: 1.2rem;
     margin-top: 1rem;
-    display: block;
+    display: inline-block;
   }
 }
 
@@ -192,7 +200,7 @@ ul.caseImages {
   }
 
 .imgSection {
-  width: 70%;
+  width: 80%;
   margin: 1rem 0 2rem;
   position: relative;
   float: left;
@@ -277,6 +285,12 @@ h1.logo a {
     background: $bg-clr;
     padding: 1em 0;
     display: block;
+    p {
+      margin-bottom: 0;
+    }
+    p:last-of-type {
+      font-style: italic;
+    }
   }
 }
 
