@@ -72,6 +72,7 @@ h3 {
 
 p {
     font-size: 1.2rem; /* 1rem */
+    margin-bottom: 1rem;
 }
 
 p.overline {
@@ -81,6 +82,7 @@ p.overline {
     font-weight: 500;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
+    margin-bottom: 0;
 }
 
 p.muted {
@@ -305,6 +307,10 @@ h1.logo a {
     background: #faf7f5;
     padding: 1em 0;
     display: block;
+}
+
+.caseItem span p {
+    margin-bottom: 0;
 }
 
 .caseItem span p:last-of-type {
