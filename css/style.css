@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 /* Base */
 html {
@@ -5,14 +6,18 @@ html {
 }
 
 body {
-  font: normal 400 1rem/1.5 "Roboto", sans-serif;
+  font: normal 400 1rem/1.5 "Amiri", serif;
   color: #000;
   background-color: #faf7f5;
   margin: 3em;
 }
 
 .wrapper {
-  max-width: 960px;
+  max-width: 800px;
+}
+
+.wrapper.cases {
+  max-width: unset;
 }
 
 header {
@@ -40,6 +45,8 @@ p {
 h1 {
   font-size: 2.125rem;
   font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.02rem;
 }
 
 h1.logo {
@@ -47,12 +54,13 @@ h1.logo {
 }
 
 header.unfocus h1.logo {
-  font-size: 1.0625rem;
+  font-size: 1.5rem;
+  line-height: 1.4;
   font-weight: 400;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 400;
   margin-bottom: 0.5rem;
 }
@@ -60,6 +68,11 @@ h2 {
 h3 {
   font-size: 1.5rem;
   font-weight: 400;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 p.subtitle {
@@ -73,11 +86,13 @@ p.subtitle-2 {
 }
 
 p.overline {
+  font-family: "Roboto", sans-serif;
   font-size: 0.625rem;
   line-height: 2;
   font-weight: 500;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
+  margin-bottom: 0;
 }
 
 p.muted {
@@ -90,6 +105,10 @@ a:visited {
   color: #8e6619;
 }
 
+#glightbox-body {
+  font-family: "Roboto", sans-serif;
+}
+
 /* Cases list */
 .casesWrapper {
   width: 100%;
@@ -98,54 +117,37 @@ a:visited {
 }
 
 .caseItem {
-  width: calc((100% - 1.5em) / 2);
-  margin: 0 1.5em 2em 0;
+  width: calc((100% - 3em) / 3);
+  margin: 0 0 2em 0;
   float: left;
 }
-
 .caseItem img {
   width: 100%;
 }
 
-.caseItem:nth-child(even) {
-  margin-right: 0;
+.caseItem:nth-child(3n+2) {
+  margin: 0 1.5em;
 }
 
-/*
-.caseItem:nth-child(3n+3) {
-    margin-right: 0;
-}
-*/
 /* Case view */
 .caseOverline {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: left;
+  align-items: center;
   margin-bottom: 1em;
 }
-
 .caseOverline > * {
   display: inline-block;
 }
-
 .caseOverline a img {
-  -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   cursor: pointer;
   display: block;
 }
-
 .caseOverline a img:hover {
   padding-right: 6px;
   margin-left: -6px;
 }
-
 .caseOverline p {
   margin-left: 1.5em;
   padding-left: 1.5em;
@@ -156,49 +158,40 @@ ul.caseImages {
   list-style-type: none;
   margin: 0 0 2rem 0;
   padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-
 ul.caseImages li {
-  width: calc(100% * (1 / 5) - 0.4rem);
+  width: calc(20% - 0.4rem);
   margin: 0 0.5rem 0.5rem 0;
   background: #181514;
   display: inline-block;
 }
-
 ul.caseImages li img {
   opacity: 0.8;
-  -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
   display: block;
   width: 100%;
 }
-
 ul.caseImages li img:hover {
   opacity: 1;
 }
-
 ul.caseImages li:nth-child(5n) {
   margin: 0 0 0.5rem 0;
 }
 
 .textSection {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   float: left;
 }
-
 .textSection h3 {
   margin-bottom: 0.5rem;
 }
-
 .textSection a {
+  font-size: 1.2rem;
   margin-top: 1rem;
-  display: block;
+  display: inline-block;
 }
 
 .textSection:last-of-type {
@@ -206,12 +199,11 @@ ul.caseImages li:nth-child(5n) {
 }
 
 .imgSection {
-  width: 70%;
+  width: 80%;
   margin: 1rem 0 2rem;
   position: relative;
   float: left;
 }
-
 .imgSection img {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -219,30 +211,24 @@ ul.caseImages li:nth-child(5n) {
           user-select: none;
   width: 100%;
 }
-
 .imgSection .processLabels {
   position: absolute;
   top: calc(50% - 0.8rem);
   width: 97.5%;
   left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
 }
-
 .imgSection .processLabels p.overline {
   width: 25%;
   text-align: right;
   float: left;
 }
-
 .imgSection .processLabels p.overline span {
   padding: 0 0.5rem;
 }
-
 .imgSection .processLabels p.overline:nth-child(even) {
   text-align: left;
 }
-
 .imgSection .processSteps {
   position: absolute;
   width: 100%;
@@ -250,16 +236,13 @@ ul.caseImages li:nth-child(5n) {
   padding-top: 0.5rem;
   border-top: 1px dashed #000;
 }
-
 .imgSection .processSteps p.overline {
-  width: calc(100% / 3);
+  width: 33.3333333333%;
   float: left;
 }
-
 .imgSection .processSteps p.overline:nth-child(2) {
   text-align: center;
 }
-
 .imgSection .processSteps p.overline:nth-child(3) {
   text-align: right;
 }
@@ -280,28 +263,29 @@ h1.logo a {
   text-decoration: none;
   color: #181514;
 }
-
 .caseItem a.image {
   background: #181514;
   float: left;
   position: relative;
 }
-
 .caseItem a img {
-  opacity: .8;
-  -webkit-transition: opacity 0.2s ease-in-out;
+  opacity: 0.8;
   transition: opacity 0.2s ease-in-out;
   display: block;
 }
-
 .caseItem a:hover img {
   opacity: 1;
 }
-
 .caseItem span {
   background: #faf7f5;
   padding: 1em 0;
   display: block;
+}
+.caseItem span p {
+  margin-bottom: 0;
+}
+.caseItem span p:last-of-type {
+  font-style: italic;
 }
 
 /* mobile and tablet views */
@@ -316,7 +300,7 @@ h1.logo a {
     font-size: 2.5rem;
   }
   ul.caseImages li {
-    width: calc(100% * (1 / 4) - 0.375rem);
+    width: calc(25% - 0.375rem);
   }
   ul.caseImages li:nth-child(4n) {
     margin: 0 0 0.5rem 0;
@@ -328,7 +312,6 @@ h1.logo a {
     width: 100%;
   }
 }
-
 @media only screen and (max-width: 600px) {
   .caseItem {
     width: 100%;
@@ -342,17 +325,16 @@ h1.logo a {
     display: block;
   }
   ul.caseImages li {
-    width: calc(100% * (1 / 3) - 0.334rem);
+    width: calc(33.3333333333% - 0.334rem);
   }
   ul.caseImages li:nth-child(3n) {
     margin: 0 0 0.5rem 0;
   }
   ul.caseImages li:nth-child(4n),
-  ul.caseImages li:nth-child(5n) {
+ul.caseImages li:nth-child(5n) {
     margin: 0 0.5rem 0.5rem 0;
   }
   .imgSection p.overline {
     font-size: 0.5rem;
   }
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

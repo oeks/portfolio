@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 // @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-$font-stack: "Roboto", sans-serif;
+$font-stack: "Amiri", serif;
+$font-stack-ss: "Roboto", sans-serif;
 
 $primary-clr: #000;
 $secondary-clr: #181514; // 4D4D4D
@@ -22,7 +24,11 @@ body {
 }
 
 .wrapper {
-  max-width: 960px;
+  max-width: 800px;
+}
+
+.wrapper.cases {
+  max-width: unset;
 }
 
 header {
@@ -35,7 +41,7 @@ header.unfocus {
   margin: 0 0 1em;
 }
 
-.wrapper > * {
+.wrapper>* {
   float: left;
 }
 
@@ -46,50 +52,74 @@ h3,
 p {
   margin: 0;
 }
+
 h1 {
   font-size: 2.125rem;
   font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.02rem;
 }
+
 h1.logo {
   color: $secondary-clr;
 }
+
 header.unfocus {
   h1.logo {
-    font-size: 1.0625rem;
+    font-size: 1.5rem;
+    line-height: 1.4;
     font-weight: 400;
   }
 }
+
 h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 400;
   margin-bottom: 0.5rem;
 }
+
 h3 {
   font-size: 1.5rem;
   font-weight: 400;
 }
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
 p.subtitle {
   font-size: 0.875rem;
   font-weight: 500;
 }
+
 p.subtitle-2 {
   font-size: 0.75rem;
   font-weight: 500;
 }
+
 p.overline {
+  font-family: $font-stack-ss;
   font-size: 0.625rem;
   line-height: 2;
   font-weight: 500;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
+  margin-bottom: 0;
 }
+
 p.muted {
   color: $muted-clr;
   margin: 1rem 0 2rem;
 }
+
 a,
 a:visited {
   color: $link-clr;
+}
+
+#glightbox-body {
+  font-family: $font-stack-ss;
 }
 
 /* Cases list */
@@ -100,9 +130,8 @@ a:visited {
 }
 
 .caseItem {
-  width: calc((100% - 1.5em) / 2);
-  // width: calc((100% - 3em) / 3);
-  margin: 0 1.5em 2em 0;
+  width: calc((100% - 3em) / 3);
+  margin: 0 0 2em 0;
   float: left;
 
   img {
@@ -110,15 +139,9 @@ a:visited {
   }
 }
 
-.caseItem:nth-child(even) {
-  margin-right: 0;
+.caseItem:nth-child(3n+2) {
+  margin: 0 1.5em;
 }
-
-/*
-.caseItem:nth-child(3n+3) {
-    margin-right: 0;
-}
-*/
 
 /* Case view */
 .caseOverline {
@@ -127,18 +150,21 @@ a:visited {
   align-items: center;
   margin-bottom: 1em;
 
-  > * {
+  >* {
     display: inline-block;
   }
+
   a img {
     transition: all 0.2s ease-out;
     cursor: pointer;
     display: block;
   }
+
   a img:hover {
     padding-right: 6px;
     margin-left: -6px;
   }
+
   p {
     margin-left: 1.5em;
     padding-left: 1.5em;
@@ -165,10 +191,12 @@ ul.caseImages {
       display: block;
       width: 100%;
     }
+
     img:hover {
       opacity: 1;
     }
   }
+
   li:nth-child(5n) {
     margin: 0 0 0.5rem 0;
   }
@@ -176,23 +204,26 @@ ul.caseImages {
 
 .textSection {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
   float: left;
+
   h3 {
     margin-bottom: 0.5rem;
   }
+
   a {
+    font-size: 1.2rem;
     margin-top: 1rem;
-    display: block;
+    display: inline-block;
   }
 }
 
 .textSection:last-of-type {
-    margin-bottom: 3em;
-  }
+  margin-bottom: 3em;
+}
 
 .imgSection {
-  width: 70%;
+  width: 80%;
   margin: 1rem 0 2rem;
   position: relative;
   float: left;
@@ -213,6 +244,7 @@ ul.caseImages {
       width: 25%;
       text-align: right;
       float: left;
+
       span {
         padding: 0 0.5rem;
       }
@@ -234,9 +266,11 @@ ul.caseImages {
       width: calc(100% / 3);
       float: left;
     }
+
     p.overline:nth-child(2) {
       text-align: center;
     }
+
     p.overline:nth-child(3) {
       text-align: right;
     }
@@ -260,23 +294,35 @@ h1.logo a {
     text-decoration: none;
     color: $secondary-clr;
   }
+
   a.image {
     background: $secondary-clr;
     float: left;
     position: relative;
   }
+
   a img {
     opacity: .8;
     transition: opacity 0.2s ease-in-out;
     display: block;
   }
+
   a:hover img {
     opacity: 1;
   }
+
   span {
     background: $bg-clr;
     padding: 1em 0;
     display: block;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    p:last-of-type {
+      font-style: italic;
+    }
   }
 }
 
@@ -285,27 +331,34 @@ h1.logo a {
   body {
     margin: 1.5em;
   }
+
   header {
     margin: 0 0 2em;
   }
+
   h2 {
     font-size: 2.5rem;
   }
+
   ul.caseImages {
     li {
       width: calc(100% * (1 / 4) - 0.375rem);
     }
+
     li:nth-child(4n) {
       margin: 0 0 0.5rem 0;
     }
+
     li:nth-child(5n) {
       margin: 0 0.5rem 0.5rem 0;
     }
   }
+
   .imgSection {
     width: 100%;
   }
 }
+
 @media only screen and (max-width: 600px) {
   .caseItem {
     width: 100%;
@@ -319,18 +372,22 @@ h1.logo a {
       display: block;
     }
   }
+
   ul.caseImages {
     li {
       width: calc(100% * (1 / 3) - 0.334rem);
     }
+
     li:nth-child(3n) {
       margin: 0 0 0.5rem 0;
     }
+
     li:nth-child(4n),
     li:nth-child(5n) {
       margin: 0 0.5rem 0.5rem 0;
     }
   }
+
   .imgSection p.overline {
     font-size: 0.5rem;
   }
